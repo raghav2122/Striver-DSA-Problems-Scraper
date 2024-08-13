@@ -2,7 +2,6 @@ import { Browser } from "puppeteer"
 
 const puppeteer = require("puppeteer")
 const fs = require("fs")
-const path = require("path")
 
 const scrapeProbs = async (url: string) => {
     try {

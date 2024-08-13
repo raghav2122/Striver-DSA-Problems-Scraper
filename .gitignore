@@ -7,16 +7,10 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
 
 # production
 /build
 
-# misc
-.DS_Store
-*.pem
 
 # debug
 npm-debug.log*
@@ -27,15 +21,8 @@ yarn-error.log*
 .env*.local
 .env
 
-# vercel
-.vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 
-# Drizzle ORM specific
-# Add any specific config or generated files related to drizzle if applicable
-
-# Cloudflare specific
-# Add any specific config or generated files related to Cloudflare if applicable

@@ -16,15 +16,16 @@ const scrapeProbs = async (url: string) => {
           .map((tdata: any) => ({
             probName: tdata.querySelector("td:nth-child(2)")?.textContent,
             lcLink: tdata
-              .querySelector("td[title='Leetcode link'] a")
-              ?.getAttribute("href")
+              .querySelector("td:nth-child(5) a")
+              ?.getAttribute("href"),
+            difficulty: tdata.querySelector("td:nth-child(7)")?.textContent,
           }))
           .filter((item) => item.probName && item.lcLink && item.lcLink.includes('https://leetcode.com/problems/'))
-  
         const data = filteredData.map((item, index) => ({
           idNo: index + 1,
           probName: item.probName,
-          lcLink: item.lcLink
+          lcLink: item.lcLink,
+          difficulty: item.difficulty,
         }))
         data.forEach((item) => {
           console.log(
@@ -33,7 +34,9 @@ const scrapeProbs = async (url: string) => {
             "probName:",
             item.probName,
             "lcLink:",
-            item.lcLink
+            item.lcLink,
+            "difficulty:",
+            item.difficulty
           )
         })
         return data
